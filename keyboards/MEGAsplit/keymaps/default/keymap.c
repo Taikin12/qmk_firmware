@@ -24,7 +24,8 @@ enum layer_names {
 // Defines the keycodes used by our macros in process_record_user
 enum custom_keycodes {
     QMKBEST = SAFE_RANGE,
-    QMKURL
+    QMKURL,
+    HOME
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -34,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_VOLU, KC_TAB , KC_Q , KC_W , KC_E , KC_R , KC_T , KC_8 , \
         KC_VOLD, KC_RSFT, KC_A , KC_S , KC_D , KC_F , KC_G , KC_9 , \
             KC_LSFT     , KC_Z , KC_X , KC_C , KC_V , KC_B , KC_0 , \
-        XXXXXX , KC_LCTRL , KC_LALT , KC_MHEN , KC_SPC , KC_ENT , KC_PSLS
+        HOME , KC_LCTRL , KC_LALT , KC_MHEN , KC_SPC , KC_ENT , KC_PSLS
     ),
 };
 
@@ -54,6 +55,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("https://qmk.fm/\n");
             } else {
                 // when keycode QMKURL is released
+            }
+            break;
+        case HOME:
+            if (record->event.pressed) {
+                SEND_STRING("/home");
+            } else {
+
             }
             break;
     }
