@@ -18,7 +18,7 @@
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
     _BASE,
-    _FN
+    _Func
 };
 
 // Defines the keycodes used by our macros in process_record_user
@@ -35,16 +35,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_VOLU, KC_TAB , KC_Q , KC_W , KC_E , KC_R , KC_T , KC_8 , \
         KC_VOLD, KC_RSFT, KC_A , KC_S , KC_D , KC_F , KC_G , KC_9 , \
             KC_LSFT     , KC_Z , KC_X , KC_C , KC_V , KC_B , KC_0 , \
-        KC_LGUI , KC_LCTRL , KC_LALT , KC_RALT , KC_SPC , LT(_func, KC_PENT) , HOME
+        KC_LGUI , KC_LCTRL , KC_LALT , KC_RALT , KC_SPC , LT(_Func, KC_PENT) , HOME
     ),
     /* Function */
     [_Func] = LAYOUT(
         KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7   , KC_F8  , \
-        ______ , ______ , ______ , ______ , ______ , ______ , _______ , KC_F9  , \
-        ______ , ______ , ______ , ______ , ______ , ______ , _______ , KC_F10 , \
-            ______      , ______ , ______ , ______ , ______ , _______ , KC_F11 , \
-        ______ , ______ , ______ , ______ , ______ , ______ , KC_F12
-    )
+        _______ , _______ , _______ , _______ , _______ , _______ , _______ , KC_F9  , \
+        _______ , _______ , _______ , _______ , _______ , _______ , _______ , KC_F10 , \
+            _______       , _______ , _______ , _______ , _______ , _______ , KC_F11 , \
+        _______ , _______ , _______ , _______ , _______ , _______ , KC_F12
+    ),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
