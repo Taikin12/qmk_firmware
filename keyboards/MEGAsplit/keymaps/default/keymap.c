@@ -32,17 +32,17 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT(
-        KC_ESC ,  KC_1  , KC_2 , KC_3 , KC_4 , KC_5 , KC_6 , KC_7 , \
-        HI     , KC_TAB , KC_Q , KC_W , KC_E , KC_R , KC_T , KC_8 , \
+        KC_ESC   ,  KC_1  , KC_2 , KC_3 , KC_4 , KC_5 , KC_6 , KC_7 , \
+        KC_PGDN  , KC_PGUP, KC_Q , KC_W , KC_E , KC_R , KC_T , KC_8 , \
         KC_DELETE, KC_RSFT, KC_A , KC_S , KC_D , KC_F , KC_G , KC_9 , \
-            KC_LSFT     , KC_Z , KC_X , KC_C , KC_V , KC_B , KC_0 , \
-        KC_LGUI , KC_LCTRL , KC_LALT , KC_F13 , KC_SPC , LT(_Func, KC_PENT) , HOME
+             KC_LSFT      , KC_Z , KC_X , KC_C , KC_V , KC_B , KC_0 , \
+        KC_LCTL , KC_MHEN , KC_TAB , KC_LALT , KC_SPC , LT(_Func, KC_PENT) , HOME
     ),
     /* Function */
     [_Func] = LAYOUT(
-        KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7   , KC_F8  , \
-        KC_VOLU , _______ , _______ , _______ , _______ , _______ , _______ , KC_F9  , \
-        KC_VOLD , _______ , _______ , _______ , _______ , _______ , _______ , KC_F10 , \
+        KC_F1   , KC_F2   , KC_F3   , KC_F4   , KC_F5   , KC_F6   , KC_F7   , KC_F8  , \
+        KC_VOLU , KC_VOLU , _______ , _______ , _______ , _______ , _______ , KC_F9  , \
+        HI      , _______ , _______ , _______ , _______ , _______ , _______ , KC_F10 , \
             _______       , _______ , _______ , _______ , _______ , _______ , KC_F11 , \
         _______ , _______ , _______ , _______ , _______ , _______ , KC_F12
     ),
@@ -77,7 +77,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 SEND_STRING("t");
             } else {
-                SEND_STRING("hi\n");
+                SEND_STRING("hi");
             }
             break;
     }
